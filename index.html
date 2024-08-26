@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de mensajes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body>
+    <!-- Encabezado del sitio -->
+    <header>
+        <img src="./assets/svg/Logo.svg" alt="logo alura" id="logo-alura">
+    </header>
+    
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección del formulario -->
+        <form class="form-section">
+            <!-- Área de texto para ingresar el mensaje -->
+            <textarea class="form-input" name="mensaje" id="mensaje" placeholder="Ingrese el texto aquí"></textarea>
+            
+            <!-- Contenedor del mensaje de alerta -->
+            <div class="btn-container">
+                <div class="alert-msj">
+                    <img src="./assets/svg/alert.svg" alt="alert icon">
+                    <span>Solo letras minúsculas y sin acentos</span>
+                </div>
+            </div>
+            
+            <!-- Contenedor de botones -->
+            <div class="submit--container">
+                <input class="form-btn" type="submit" value="Encriptar">
+                <input class="form-btn form-btn--secundary" type="submit" value="Desencriptar" id="btn-desencriptar">
+            </div>
+        </form>
+        
+        <!-- Sección de resultados -->
+        <aside class="result">
+            <img src="./assets/img/Muñeco.png" alt="imagen-muñeco" class="result-img">
+            <div class="loader hidden"></div>
+            <div class="chibby hidden">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="cheek left"></div>
+                <div class="cheek right"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="result-container">
+                <h3 class="result-title">Ningún mensaje fue encontrado</h3>
+                <p class="result-subtittle">Ingresa el texto que desees encriptar o desencriptar .</p>
+                <textarea class="result-text" name="mensaje" id="mensaje" placeholder="" readonly></textarea>
+                <button class="result--btn form-btn form-btn--secundary hidden" id="btn-copy">Copiar</button>
+                <button class="result--btn form-btn form-btn--secundary hidden" id="btn-paste">Pegar</button>
+            </div>
+        </aside>    
+    </main>
+    
+    <!-- Pie de página -->
+    <footer>
+        <!-- Contenedor de los enlaces de redes sociales -->
+        <div class="footer-container">
+            <a href="https://github.com/codesable01" target="_blank" aria-label="GitHub">
+                <img src="./assets/svg/github.svg" alt="GitHub" class="icon-small">
+            </a>
+            <a href="https://discord.gg/ne5cUmt8MK" target="_blank" aria-label="Discord">
+                <img src="./assets/svg/discord.svg" alt="Discord" class="icon-small">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="./assets/svg/linkedin.svg" alt="LinkedIn" class="icon-small">
+            </a>
+        </div> 
+        
+        <!-- Texto de créditos y símbolo de copyright -->
+        <div class="footer-credits">
+            
+            <img src="./assets/svg/copyright.svg" alt="Copyright" class="icon-small">
+            <p>Encriptador de texto desarrollado por Codesable01</p>
+        </div>
+    </footer>
+    
+    <script src="./encriptador.js"></script>
+</body>
+</html>
