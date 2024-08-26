@@ -57,7 +57,7 @@ main {
   margin:4px;
 
   overflow: auto; /* Agrega scroll cuando el texto es muy grande */
-  resize: vertical; /* Permite que el usuario ajuste el tamaño hacia abajo */
+    resize: none;
   scrollbar-color: var(--dark-blue) var(--main-color); /* Colores del scroll */
   scrollbar-width: thin; /* Tamaño del scroll */
 
@@ -80,6 +80,7 @@ main {
   font-size: 3.2rem;
   color: var(--dark-blue);
   margin-bottom: 3rem;
+  resize: none;
 
  
 
@@ -193,6 +194,7 @@ main {
   outline: none;
   word-wrap: break-word; /* Ajusta el texto largo */
   overflow-wrap: break-word; /* Ajusta el texto largo */
+  resize: none;
 }
 
 .hidden {
