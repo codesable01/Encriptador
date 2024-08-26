@@ -1,0 +1,394 @@
+:root {
+  --dark-blue: #0A3871;
+  --main-color: #F3F5FC;
+  --light-blue: #D8DFE8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  background: var(--White);
+  text-align: center;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  background-color: var(--main-color);
+  font-family: var(--inter-font);
+
+}
+
+header {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 120px;
+  height: 48px;
+}
+
+header .logo-img {
+  width: 120px;
+  height: 48px;
+  max-width: 100%;
+  object-fit: contain; 
+}
+
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px; 
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70dvh;
+  max-height: 100vh; 
+  margin:4px;
+
+  overflow: auto; /* Agrega scroll cuando el texto es muy grande */
+  resize: vertical; /* Permite que el usuario ajuste el tamaño hacia abajo */
+  scrollbar-color: var(--dark-blue) var(--main-color); /* Colores del scroll */
+  scrollbar-width: thin; /* Tamaño del scroll */
+
+  
+  
+ 
+
+}
+
+.form-input {
+  width: 100%;
+  max-width: 577px;
+  height: 70dvh;
+  min-height: 100px; /* Asegura que no se haga demasiado pequeño */
+  border-color: var(--dark-blue);
+  border-radius: 38px;
+  background: transparent;
+  outline: none;
+  font-family: var(--inter-font);
+  font-size: 3.2rem;
+  color: var(--dark-blue);
+  margin-bottom: 3rem;
+
+ 
+
+  
+  
+}
+::placeholder {
+  color: var(--dark-blue);
+}
+
+/* Color fosforescente para el textarea cuando se hace focus */
+.form-input:focus {
+  background-color: var(--main-color); /* Azul fosforescente */
+  color: var(--dark-blue); /* Texto en negro */
+}
+
+::placeholder {
+  color: var(--dark-blue);
+}
+
+.alert-msj {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.submit--container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-btn {
+  background: var(--dark-blue);
+  color: white;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+
+  width: 100%;
+  height: 67px;
+    
+
+ 
+  border-radius: 24px;
+  border: 1px solid var(--dark-blue);
+  font-weight: 600;
+}
+
+.form-btn--secundary {
+  background: transparent;
+  color: var(--dark-blue);
+}
+
+.result {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  min-height: 72dvb;
+  border-radius: 32px;
+  max-width: 40rem;
+
+  width: 100%;
+  height: auto;
+  padding: 2rem 3rem;
+  margin-top: 2rem;
+  position: relative; /* Para asegurarse que el contenido no desplace la imagen */
+}
+
+
+
+  
+@media screen and (max-width: 768px) {
+  .result {
+    height: auto;
+    max-width: 100%; /* Permite que ocupe el 100% en pantallas pequeñas */
+    margin: 2rem 1rem; /* Añade margen para que no toque los bordes de la pantalla */
+  }
+}
+
+.result-img {
+  
+
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.result-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #343A40;
+}
+
+.result-text {
+  font-size: 1.6rem;
+  color: #343A40;
+  background: transparent;
+  padding: 1rem 2rem;
+  width: 328px;
+  height: 67px;
+  border-radius: 24px;
+  border: 1px transparent;
+  font-weight: 600;
+  outline: none;
+  word-wrap: break-word; /* Ajusta el texto largo */
+  overflow-wrap: break-word; /* Ajusta el texto largo */
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+
+  .submit--container {
+    justify-content: center;
+  }
+
+ 
+  
+
+  .result-img {
+    display: none;
+  }
+
+  header img {
+    width: 73px;
+  }
+}
+
+.loader {
+  width: 65px;
+  height: 117px;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff8001;
+  box-shadow: 0 0 0 50px;
+  clip-path: polygon(100% 0, 23% 46%, 46% 44%, 15% 69%, 38% 67%, 0 100%, 76% 57%, 53% 58%, 88% 33%, 60% 37%);
+}
+
+.loader:after {
+  animation: l8 1s infinite;
+  transform: perspective(300px) translateZ(0px);
+}
+
+@keyframes l8 {
+  to {
+    transform: perspective(300px) translateZ(180px);
+    opacity: 0;
+  }
+}
+
+.chibby {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #ffcccb;
+  border-radius: 50%;
+  margin: 50px auto;
+  overflow: hidden;
+  animation: bounce 2s infinite;
+}
+
+.eye {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 50px;
+  animation: blink 3s infinite;
+}
+
+.eye.left {
+  left: 35px;
+}
+
+.eye.right {
+  right: 35px;
+}
+
+.cheek {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: #ff9999;
+  border-radius: 50%;
+  top: 90px;
+}
+
+.cheek.left {
+  left: 20px;
+}
+
+.cheek.right {
+  right: 20px;
+}
+
+.mouth {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 15px 15px 0 0;
+  top: 115px;
+  left: 60px;
+}
+
+@keyframes blink {
+  0%, 100% {
+    height: 25px;
+  }
+
+  50% {
+    height: 8px;
+  }
+}
+
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.footer-container a {
+  margin: 0 10px;
+}
+
+.footer-credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.icon-small {
+  width: 48px;
+  height: 48px;
+  margin-left: 5px;
+}
+
+
+
+/* Ajustes generales para responsividad */
+@media screen and (max-width: 768px) {
+  /* Asegura que el formulario se centre y ocupe el espacio adecuado */
+  .form-input {
+    width: calc(100% - 20px); /* Deja un margen de 10px a cada lado */
+    max-width: none; /* Elimina el límite de 577px */
+    margin: 0 auto; /* Centra horizontalmente */
+
+  }
+
+  /* Ajusta la sección result para evitar scroll horizontal */
+  .result {
+    max-width: 90%; /* Ajusta el ancho máximo al 90% de la pantalla */
+    margin: 2rem auto; /* Centra horizontalmente y añade margen arriba y abajo */
+    padding: 2rem; /* Asegura un buen espaciado interno */
+    overflow: hidden; /* Evita que el contenido desborde */
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Opcional: Ajusta el tamaño de los botones en pantallas pequeñas */
+  .form-btn {
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+  }
+
+  /* Evita que otros elementos generen scroll horizontal */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
